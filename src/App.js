@@ -5,17 +5,10 @@ import './App.css';
 class App extends Component{
   constructor(){
     super();
-    this.state = {monsters:[
-      {name:'Frankenstain',
-    id:'1233'},
-      {name:'Dracula',
-      id:'21233'},
-      {name:'Zombie',
-      id:'a123'}
-    ]}
+    this.state = {monsters:[]}
   }
   componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users').then(response=>response.json()).then(users=>console.log(users))
+    fetch('https://jsonplaceholder.typicode.com/users').then(response=>response.json()).then(users=>this.setState({monsters:users}))
   }
   render(){
     return (
