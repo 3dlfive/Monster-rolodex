@@ -14,11 +14,11 @@ class App extends Component{
     return (
       <div className="App">
       <CardList name="Denys">
-        <h1>Denys</h1>
+      {
+        this.state.monsters.map((el)=><h1 key={el.id}>{el.name} </h1>)
+      }
       </CardList>
-        {
-          this.state.monsters.map((el)=><h1 key={el.id}>{el.name} </h1>)
-        }
+
       </div>
     );
   }
