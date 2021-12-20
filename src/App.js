@@ -5,13 +5,20 @@ import './App.css';
 class App extends Component{
   constructor(){
     super();
-    this.state = {monsters:[]}
+    this.state = {monsters:[],
+      searchFiled:''
+    }
   }
   componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users').then(response=>response.json()).then(users=>this.setState({monsters:users}))
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response=>response.json())
+    .then(users=>this.setState({monsters:users}))
   }
   render(){
-    return   <CardList monsters={this.state.monsters}/>
+    return  ( <div className='App'>
+      <input type='search' placeholder='search' onChange={(event)=>this.state.searchFiled=event.target.value}/>
+      <CardList monsters={this.state.monsters}/>
+    </div>)
 
   }
 }
