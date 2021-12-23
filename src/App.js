@@ -11,7 +11,7 @@ class App extends Component{
     this.state = {monsters:[],
       searchFiled:''
     };
-    this.handleChange = this.handleChange.bind(this)
+  
   }
   componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
