@@ -11,7 +11,7 @@ class App extends Component{
     this.state = {monsters:[],
       searchFiled:''
     };
-  
+
   }
   componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -29,7 +29,7 @@ class App extends Component{
       monsters.name.toLowerCase().includes(searchFiled.toLowerCase())
       );
     return  ( <div className='App'>
-
+      <h1>Monsters search App</h1>
       <SearchBox
       placeholder='search'
       handleChange={this.handleChange}
